@@ -1,0 +1,125 @@
+import { Pressable, TextInput, Image, Text, View } from 'react-native';
+
+
+export default function App() {
+  return (
+    
+<View style = {{ flex: 1 }}>
+
+  <View style = {{ flex: 1, backgroundColor: "#272559" }}>
+  
+    <Image 
+
+          source = { require("./lua.png") }
+
+            style= {{
+
+              width: 100,
+              height: 100,
+              alignSelf: 'center',
+              marginTop: 20,
+
+          }}
+
+          />
+
+      <Image 
+
+          source = { require("./estrela.png") }
+
+          style= {{
+
+            width: 100,
+            height: 100,
+            alignSelf: 'center',
+            position: 'absoute',
+            top: -80,
+            left: -40 
+
+          }}
+
+      />
+
+        <View style = {{ position: 'absoute', top: -16, alignItems: 'center' }}>
+
+          <Text style = {{ color: '#F2A413'}} > Digite seu email </Text>
+
+      
+            <TextInput 
+
+            placeholder = 'Seu email' 
+
+            style = {{ borderRadius: 5, borderWidth: 1, margin: 10, padding: 5, color: '#E8EBE0',
+            borderColor: '#E8EBE0' }}
+            
+            />
+
+          <Text style = {{ color: '#F2A413' }}> Digite sua senha </Text>
+
+          <TextInput 
+
+          placeholder = 'Sua senha'
+
+          secureTextEntry = { true }
+
+          keyboardType = 'numeric'
+
+          style = {{ borderRadius: 5, borderWidth: 1, margin: 10, padding: 5, color: '#E8EBE0',
+          borderColor: '#E8EBE0' }}
+          
+          />
+
+          <View style = {{ flexDirection: 'row', top: 8, gap: 10 }}>
+
+            <Pressable style={{ backgroundColor: '#F2A413', padding: 8, borderRadius: 5}}
+            onPress={() => alert("Conta criada!")} >
+
+              <Text style={{ color: '#E8EBE0', fontWeight:"bold" }}>Criar conta</Text>
+
+            </Pressable>
+
+            <Pressable style={{ backgroundColor: '#F2A413', padding: 8, borderRadius: 5}}
+            onPress={() => alert("Cadastro Cancelado!")} >
+
+              <Text style={{ color: '#E8EBE0', fontWeight:"bold" }}>Já tenho uma conta</Text>
+
+            </Pressable>
+
+          </View>
+
+        </View>
+
+          <Text style = {{fontSize: 16, textAlign: 'center', position: 'absoute',
+            top: -260, alignItems: 'center', margin: 10, color: '#E8EBE0' }}>As fofocas mais 
+          <Text style = {{ color: '#F2A413', fontWeight: 'bold' }}> brilhantes </Text> do        universo, em um só lugar!!
+          </Text>
+
+  
+  </View>
+  
+    <View style = {{ flex: 0.1 }}>
+
+      <Image 
+
+              source = {{ uri: 'https://i.pinimg.com/736x/d1/2c/49/d12c49faf7db41cd057aebe5a76fbb42.jpg' }}
+
+              style= {{
+              marginTop: -200,
+              width: 350,
+              height: 350
+
+              }}
+
+            />
+
+
+      <Text style = {{fontSize: 13, textAlign: 'center', margin: 10, color: '#E8EBE0', position: 'absolute'}}>
+      Nenhum direito reservado - Desenvoldido por: Isabelly S.S - v1.0</Text>
+
+    </View>
+
+</View>
+
+  );
+}
+
