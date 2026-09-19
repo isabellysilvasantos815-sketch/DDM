@@ -1,0 +1,161 @@
+import { StyleSheet, Image, Text, View } from 'react-native';
+
+
+export default function App() {
+  return (
+    
+<View style = { styles.principal }>
+
+  <View style = { styles.caixa1 }>
+  
+  <Image 
+
+          source = { require("./lua.png") }
+
+          style= { styles.img1 }
+
+        />
+
+        <Image 
+
+          source = { require("./estrela.png") }
+
+          style= { styles.img2 }
+
+        />
+
+        <Image 
+
+          source = { require("./fone.png") }
+
+          style= { styles.img3 }
+
+        />
+
+        <Image 
+
+          source = { require("./terra") }
+
+          style= { styles.img4 }
+
+        />
+
+        <Text style = { styles.text1 } >Oops! They Sparked Again
+        
+        </Text>
+
+        <Text style = { styles.text2 }
+        >As fofocas mais <Text style = {{ color: '#F2A413', fontWeight: 'bold' }}> brilhantes </Text> do universo, em um só lugar!!
+        </Text>
+
+
+          <Image 
+
+          // source = {{ uri: 'https://i.pinimg.com/1200x/ab/f6/82/abf682a3423849e23f8c4930d8120347.jpg' }}
+
+          source = {{ uri: 'https://i.pinimg.com/736x/d1/2c/49/d12c49faf7db41cd057aebe5a76fbb42.jpg' }}
+
+          style= { styles.img5 }
+
+        />
+        
+       
+
+      
+  
+  </View>
+  
+  <View style = { styles.caixa3 }>
+
+
+    <Text style = { styles.text3 }>Nenhum direito reservado - Desenvoldido por: Isabelly S.S - v1.0</Text>
+
+  </View>
+
+</View>
+
+  );
+}
+
+const styles = StyleSheet.create({
+  principal: { flex: 1 },
+
+  caixa1: { flex: 1, backgroundColor: "#272559" },
+
+  img1: 
+  { 
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    marginTop: 20
+    },
+
+    img2: 
+  { 
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    position: 'absoute',
+    top: -80,
+    left: -40  
+    },
+
+    img3:
+  {
+
+      width: 100,
+      height: 100,
+      position: 'absoute',
+      top: -160,
+      left: 210 
+
+  },
+
+    img4:
+  {
+    
+      width: 80,
+      height: 80,
+      position: 'absoute',
+      top: -220,
+      right: -12
+
+  },
+
+    text1:
+  {
+
+      fontSize: 30, fontWeight: 'bold', textAlign: 'center', position: 'absoute',
+      top: -200, color: "#F2A413"
+
+  },
+
+    text2:
+  {
+
+      fontSize: 16, textAlign: 'center', position: 'absoute',
+      top: -190, alignItems: 'center', margin: 10, color: '#E8EBE0'
+
+  },
+
+    img5:
+  {
+
+      marginTop: -170,
+      width: 350,
+      height: 350
+
+  },
+
+    caixa3:
+  {
+     flex: 0.1
+  },
+
+    text3:
+  {
+    fontSize: 13, textAlign: 'center', margin: 10, color: '#E8EBE0'
+  }
+
+
+})
