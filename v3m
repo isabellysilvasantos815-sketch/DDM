@@ -1,0 +1,290 @@
+import { StyleSheet, SafeAreaView, ScrollView, Pressable, TextInput, Image, Text, View } from 'react-native';
+
+
+export default function App() {
+  return (
+
+<SafeAreaView style = {{ flex: 1 }}>
+
+<ScrollView> 
+    
+<View style = { styles.principal }>
+
+  <View style = { styles.caixa1 }>
+
+    <View style = { styles.caixa2 }> 
+
+    <Image source = { require("./notificacao.png")} 
+    
+    style= { styles.img1 } />
+
+
+    <Image source = { require("./configu.png")} 
+    
+    style= { styles.img2 } />
+
+    <Text style= { styles.text1 }> Oops! They Sparked Again
+
+    </Text>
+
+    <Image source = { require("./local.png")} 
+    
+    style= { styles.img3 } />
+
+    </View>
+  
+    <Image 
+
+          source = { require("./lua.png") }
+
+            style= { styles.img4 }
+
+          />
+
+      <Image 
+
+          source = { require("./estrela.png") }
+
+          style= { styles.img5 }
+
+      />
+
+        <View style = { styles.barra }>
+
+            <TextInput 
+
+            placeholder = 'Qual a fofoca brilhante de hoje?' 
+
+            style = { styles.textinput }
+            
+            />
+
+
+          <View style = { styles.caixa3 }>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./chuva.jpg") } 
+              
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Tire o Cavalhinho da chuva!")} >
+
+              <Text style={ styles.textconteudo }>Precipitações</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./ciclone.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Segurem suas saias senhores!")} >
+
+              <Text style={ styles.textconteudo }>Ciclones</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./raio.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Ka-chow!")} >
+
+              <Text style={ styles.textconteudo }>Raios</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./queimada.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Labareda!")} >
+
+              <Text style={ styles.textconteudo }>Queimadas</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./nina.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Cabeça fria!")} >
+
+              <Text style={ styles.textconteudo }>El Niña</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./nino.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Cabeça quente!")} >
+
+              <Text style={ styles.textconteudo }>El Niño</Text>
+
+              </Pressable>
+
+            </View>
+
+            <View style = { styles.principal }>
+
+              <Image source = { require("./desaster.jpg") } 
+
+              style = { styles.imgconteudo } />
+
+              <Pressable style={ styles.pressableconteudo }
+              onPress={() => alert("Fofocas desastrosas!")} >
+
+              <Text style={ styles.textconteudo }>Desastre do ano</Text>
+
+              </Pressable>
+
+            </View>
+
+          </View>
+
+        </View>
+
+  
+  </View>
+  
+    <View style = { styles.rodape }>
+
+      <Text style = { styles.textrodape }>
+      Nenhum direito reservado - Desenvoldido por: Isabelly S.S - v1.0</Text>
+
+    </View>
+
+</View>
+
+</ScrollView>
+
+</SafeAreaView>
+
+  );
+}
+
+const styles = StyleSheet.create({
+
+  principal: { flex: 1 },
+
+  caixa1: { flex: 1, backgroundColor: "#272559" },
+
+  caixa2: { flex: 0.2, flexDirection: 'row', alignSelf: 'center' },
+
+  img1:
+{
+  width: 50,
+  height: 50,
+  marginTop: 5,
+},
+
+ img2:
+{
+  width: 60,
+  height: 50,
+  marginTop: 5,
+},
+
+  text1:
+{
+  width: 100,
+  height: 40,
+  marginTop: 10,
+  color: "#F2A413"
+},
+
+  img3:
+{
+  width: 40,
+  height: 40,
+  marginTop: 10,
+},
+
+  img4:
+{
+  width: 100,
+  height: 100,
+  alignSelf: 'center',
+  marginTop: 85,
+},
+
+  img5:
+{
+  width: 100,
+  height: 100,
+  alignSelf: 'center',
+  position: 'absoute',
+  top: -80,
+  left: -40 
+},
+
+  barra:
+{
+    position: 'absoute', top: -75, alignItems: 'center'
+},
+
+  textinput:
+{
+  borderRadius: 5, borderWidth: 1, margin: 10, padding: 5, color: '#E8EBE0',
+  borderColor: '#E8EBE0', width: 230, textAlign: 'center'
+},
+
+  caixa3:
+{
+  flexDirection: 'collumn', top: 8, gap: 20
+},
+
+  imgconteudo:
+{
+  width: 150, height: 100, borderRadius: 5
+},
+
+  pressableconteudo:
+{
+  backgroundColor: '#F2A413', padding: 8, borderRadius: 5
+},
+
+  textconteudo:
+{
+  color: '#E8EBE0', fontWeight:"bold", textAlign: 'center'
+},
+
+  rodape:
+{
+  flex: 0.05, backgroundColor: '#F2A413'
+},
+
+  textrodape:
+{
+  fontSize: 13, textAlign: 'center', margin: 10, color: '#E8EBE0', position: 'absolute'
+}
+
+})
+
