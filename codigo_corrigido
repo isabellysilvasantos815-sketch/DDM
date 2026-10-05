@@ -1,0 +1,41 @@
+import { StyleSheet, Text, View, Image} from'react-native'; /* Primeira obs: É importante a devida organização e espaçamento, para que o código seja legível e entendível */
+
+export default function App(){
+
+return  (
+
+/* Segunda obs: É importante que os nomes dos objetos se relacionem com o assunto, assim o código fica mais profissional */
+<View style = { styles.caixaPai }> 
+<Text style = { styles.title }>App de Estudos </Text>
+<Text style = {{ textAlign: 'center' }}>Organize provas tarefas e revisões </Text>
+<Image source = { require("./img")} style= { styles.img } />
+<View style = { styles.card }>
+<Text style = { styles.text }>Matemática</Text>
+<Text>Revisar funções para sexta-feira.</Text></View>
+<View style = { styles.card }>
+<Text style = { styles.text }>História</Text>
+<Text>Ler capítulo sobre Revolução Industrial.</Text>
+</View>
+</View>
+
+);
+
+}
+
+/* Terceita obs: Gosto de dar muitos espaçamentos, pois assim a leitura do código é bem ampla e com uma simples vista grossa, pode ser analisado */
+
+const styles = StyleSheet.create ({
+  
+  caixaPai: { flex: 1, alignItens: 'center', padding: 20, gap: 20},
+
+  card: { backgroundColor: '#ddd', padding: 12, marginTop: 10},
+
+  title: { fontSize: 26, fontWeight:'bold', textAlign: 'center'}, /* Quarta obs: fontWeight estava escrito errado */
+
+  text: { fontSize: 14, color: 'blue' },
+
+  img: { width: 90, height:90, alignSelf: 'center'} /* Quinta obs: Centralizei a imagem e os títulos para que o layout ficasse mais bonito - e o height estava com erro de digitação */
+
+  /* Sexta obs - e última - : De onde você tirou esse código? foi o chat quem fez? SOCORRO! melhore :/  */
+  
+  });
