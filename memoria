@@ -1,0 +1,180 @@
+import { SafeAreaView, ScrollView, Pressable, Text, View, StyleSheet, ImageBackground, Image } from 'react-native';
+import { useState } from 'react';
+
+export default function App() {
+
+  const [ cliques1, atualizarCliques1 ] = useState(0);
+  const [ cliques2, atualizarCliques2 ] = useState(0);
+  const [ rodada, atualizarRodada ] = useState(1);
+
+  return (
+
+    <SafeAreaView style = {{ flex: 1 }}>  
+
+    <View style = { styles.principal }>
+
+    <ImageBackground source = {require('./jordan.jpg')} style = {{ flex: 1 }}  resizeMode = "cover">
+
+    <Image source = {require("./bola_basquete.png")} 
+    style = 
+    {{ 
+
+      width: 100,
+      height: 150,
+      position: 'absolute',
+      top: 525,
+      left: 30,
+      zIndex: 2
+
+    }} />
+
+      <ScrollView> 
+
+      <View style = { styles.caixa1 }> 
+
+        <Text style = {{ marginTop: 12, color: '#BF3F34', textAlign: 'center', fontWeight: 'bold' }}>
+        Basketball Placar</Text>
+
+        <View style = { styles.caixa3 }>
+
+        <View style = { styles.caixa2 }>
+
+          <Text style = { styles.text }> Player 1 </Text>
+
+          <Text style = { styles.text }> { cliques1 } </Text>
+
+          <Pressable 
+          onPress = { () => { 
+
+          if ( cliques1 >= 0 ) 
+          {atualizarCliques1( cliques1 + 1 ) } 
+          
+          if ( cliques1 +1 == 21 && rodada <= 10 ) 
+          { alert('Player 1 ganhou!') } 
+
+          } } style = { styles.pressable } > <Text style = { styles.textPressable } > +1 </Text> </Pressable>
+
+          <Pressable 
+          onPress = { () => { 
+            
+          if ( cliques1 >= 0 ) { atualizarCliques1( cliques1 + 2 ) }
+          
+          if ( cliques1 +2 >= 21 && rodada <= 10 )
+          { alert('Player 1 ganhou!') }
+          
+          } }style = { styles.pressable } > <Text style = { styles.textPressable } > +2 </Text> </Pressable>
+
+          <Pressable 
+          onPress = { () => { if (cliques1 > 0) atualizarCliques1( cliques1 - 1 ) } } 
+          style = { styles.pressable } > 
+          <Text style = { styles.textPressable } > -1 </Text> </ Pressable>
+
+        </View>
+
+        <View style = { styles.caixa2 }> 
+
+          { /* Player 2 */ }
+
+          <Text style = { styles.text }> Player 2 </Text>
+          
+          <Text style = { styles.text }> { cliques2 } </Text>
+
+          <Pressable 
+          onPress = { () => { 
+
+          if ( cliques2 >= 0 ) 
+          {atualizarCliques2( cliques2 + 1 ) } 
+          
+          if ( cliques2 +1 == 21 && rodada <= 10 ) 
+          { alert('Player 2 ganhou!') } 
+
+          } } style = { styles.pressable } > <Text style = { styles.textPressable } > +1 </Text> </Pressable>
+
+          <Pressable 
+          onPress = { () => { 
+            
+          if ( cliques2 >= 0 ) { atualizarCliques2( cliques2 + 2 ) }
+          
+          if ( cliques2 +2 >= 21 && rodada <= 10 )
+          { alert('Player 2 ganhou!') }
+          
+          } } style = { styles.pressable } > <Text style = { styles.textPressable } > +2 </Text> </Pressable>
+
+          <Pressable  
+          onPress = { () => { if (cliques2 > 0) atualizarCliques2( cliques2 - 1 ) } } 
+          style = { styles.pressable } > 
+          <Text style = { styles.textPressable } > -1 </Text> </Pressable>
+
+        </View>
+
+        </View>
+
+        <View style = { styles.caixa2 } >
+
+          <Text style = { styles.text }> { rodada} { "| 10" } </Text>
+        
+          <Pressable 
+          onPress = { () => {if (rodada >= 1 && rodada < 10) atualizarRodada( rodada + 1 ) } } 
+          style = { styles.pressable2 } > 
+          <Text style = { styles.textPressable }> Próxima Rodada </Text> </Pressable>
+
+          <Pressable
+          onPress = { () => { if (rodada > 1 && rodada <= 10) atualizarRodada( rodada - 1 ) } }
+          style = { styles.pressable2 } > 
+          <Text style = { styles.textPressable }> Corrigir Rodada </Text> </Pressable>
+
+          <Pressable 
+          onPress = { () => { if (rodada > 1 && rodada <= 10) 
+          {atualizarRodada( 1 ), atualizarCliques1( 0 ),atualizarCliques2( 0 ) } } }
+          style = { styles.pressable2 } > 
+          <Text style = { styles.textPressable }> Reset Rodada </Text> </Pressable>
+
+        </View>
+
+        </View>
+
+        </ScrollView>
+
+        </ImageBackground>
+
+  
+      </View>
+
+    
+
+    </SafeAreaView>
+    
+  );
+}
+
+const styles = StyleSheet.create({
+
+  principal: { flex: 1, gap: 12 },
+
+  caixa1: 
+  { 
+    flex: 1, 
+    backgroundColor: 'white', 
+    alignItems: 'center', 
+    gap: 12, width: 200, 
+    marginTop: 250,
+    marginLeft: 110,
+    borderRadius: 10
+  },
+
+  caixa3: { flex: 1, gap: 12, alignItems: 'center', flexDirection: 'row' },
+
+  text: {  marginTop: 12, color: '#1F5AA6', textAlign: 'center', fontWeight: 'bold' },
+
+  caixa2: { flex: 1, gap: 12, alignItems: 'center', flexDirection: 'column', textAlign: 'center' },
+
+  pressable: { backgroundColor: '#BF3F34', width: 50, textAlign: 'center', alignItems: 'center', },
+
+  pressable2: { backgroundColor: '#BF3F34', width: 120, textAlign: 'center', alignItems: 'center', },
+
+  textPressable: { textAlign: 'center', color: 'white' }
+
+
+})
+
+
